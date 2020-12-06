@@ -1,6 +1,7 @@
 # QualtricsDataCleaning
 Useful R codes for cleaning and filtering datasets from Qualtrics surveys, with step by step explanations- By Angela Jiang-Wang
-R version used: 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+
+#R version used: 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
 
 Hi all, many Qualtrics surveys used for experiments produce really similar output datasets.
 I will share with you some of my preferred codes for data cleaning and filtering. 
