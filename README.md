@@ -1,5 +1,4 @@
-# QualtricsDataCleaning
-Useful R codes for cleaning and filtering datasets from Qualtrics surveys, with step by step explanations- By Angela Jiang-Wang
+# Useful R codes for cleaning and filtering datasets from Qualtrics surveys, with step by step explanations- By Angela Jiang-Wang
 
 #R version used: 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
 
