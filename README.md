@@ -1,4 +1,4 @@
-# Useful R codes for cleaning and filtering datasets from Qualtrics surveys, and for creating new variables
+# Useful R codes for cleaning and filtering data from Qualtrics surveys, and for creating new variables
 
 By Ángela Jiang-Wang
 
