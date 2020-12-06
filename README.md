@@ -5,6 +5,7 @@ By Angela Jiang-Wang
 #R version used: 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
 
 Hi all, many Qualtrics surveys used for experiments produce really similar output datasets.
+
 I will share with you some of my preferred codes for data cleaning and filtering, and also for creating new variables in the dataframe from existing data
 
 As often happens with coding, there are many different ways of doing one same task in R. These are the codes I like using and that normally work for me.
