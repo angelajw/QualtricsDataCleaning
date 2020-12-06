@@ -1,4 +1,6 @@
-# Useful R codes for cleaning and filtering datasets from Qualtrics surveys, with step by step explanations- By Angela Jiang-Wang
+# Useful R codes for cleaning and filtering datasets from Qualtrics surveys
+
+By Angela Jiang-Wang
 
 #R version used: 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
 
@@ -13,6 +15,6 @@ Before starting, I'd like to tell you that you can make data cleaning much more 
 For instance, you can edit how you want your variables to be named in the output dataset and how the values of each variable should be coded.
 Try playing with features such as Question names, Recode values, Question export tags (for questions with many items such as matrices) in order to produce a more "refined" dataset from Qualtrics.
 
-I will provide codes for both "unrefined" datasets, for cases where the aforementioned features are not exploited, and for "refined" datasets.
+I will provide codes with step-by-step explanations for both "unrefined" datasets, for cases where the aforementioned features are not exploited, and for "refined" datasets.
 
 If you have any questions or comments, feel free to DM me in Twitter: @angyjiwa
