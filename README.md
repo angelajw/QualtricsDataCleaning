@@ -17,4 +17,4 @@ Try playing with features such as Question names, Recode values, Question export
 
 I will provide codes with step-by-step explanations for both "unrefined" datasets, for cases where the aforementioned features are not exploited, and for "refined" datasets.
 
-If you have any questions or comments, feel free to DM me in Twitter: @angyjiwa
+If you have any questions or comments, feel free to email me at: angelajw11@gmail.com
