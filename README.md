@@ -1,6 +1,6 @@
 # Useful R codes for cleaning and filtering datasets from Qualtrics surveys, and for creating new variables
 
-By Angela Jiang-Wang
+By Ángela Jiang-Wang
 
 #R version used: 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
 
