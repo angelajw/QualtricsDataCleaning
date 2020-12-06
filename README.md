@@ -15,6 +15,8 @@ Before starting, I'd like to tell you that you can make data cleaning much more 
 For instance, you can edit how you want your variables to be named in the output dataset and how the values of each variable should be coded.
 Try playing with features such as Question names, Recode values, Question export tags (for questions with many items such as matrices) in order to produce a more "refined" dataset from Qualtrics.
 
-I will provide codes with step-by-step explanations for both "unrefined" datasets, for cases where the aforementioned features are not exploited, and for "refined" datasets.
+I will provide codes with step-by-step explanations for "unrefined" datasets, that is to say, for cases where the aforementioned features are not exploited. 
+Note that with a "refined" dataset, you will use really similar codes but just skipping some steps.
+
 
 If you have any questions or comments, feel free to email me at: angelajw11@gmail.com
