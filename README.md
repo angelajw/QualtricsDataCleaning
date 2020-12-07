@@ -10,7 +10,7 @@ I will share with you some of my preferred codes for data cleaning and filtering
 
 As often happens with coding, there are many different ways of doing one same task in R. These are the codes I like using and that normally work for me.
 
-Hopefully this may help you so you don't get too crazy looking in forums and all over the internet like me for doing some simple stuff.
+Hopefully this may help you so you don't get too crazy looking in forums and all over the internet like me for doing some really simple jobs.
 
 Before starting, I'd like to tell you that you can make data cleaning much more efficient and easier with the right survey design in Qualtrics.
 For instance, you can edit how you want your variables to be named in the output dataset and how the values of each variable should be coded.
