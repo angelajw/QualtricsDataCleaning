@@ -6,7 +6,7 @@ By Ángela Jiang-Wang
 
 Hi all, many Qualtrics surveys used for experiments produce really similar output datasets.
 
-I will share with you some of my preferred codes for data cleaning and filtering, and also for creating new variables in the dataframe from existing data with functions and logical operators.
+I will share with you my preferred codes and their respective explanations for data cleaning and filtering, and also for creating new variables in the dataframe from existing data with functions and logical operators.
 
 As often happens with coding, there are many different ways of doing one same task in R. These are the codes I like using and that normally work for me.
 
@@ -16,7 +16,7 @@ Before starting, I'd like to tell you that you can make data cleaning much more 
 For instance, you can edit how you want your variables to be named in the output dataset and how the values of each variable should be coded.
 Try playing with features such as Question names, Recode values, Question export tags (for questions with many items such as matrices) in order to produce a more "refined" dataset from Qualtrics.
 
-I will provide codes with step-by-step explanations for "unrefined" datasets, that is to say, for cases where the aforementioned features are not exploited. 
+I will provide codes with step-by-step explanations for an "unrefined" dataset, that is to say, for a case where the aforementioned features are not exploited. 
 Note that with a "refined" dataset, you will use really similar codes but just skipping some steps.
 
 
