@@ -21,3 +21,4 @@ Note that with a "refined" dataset, you will use really similar codes but just s
 
 
 If you have any questions or comments, feel free to email me at: angelajw11@gmail.com
+Your feedback is always welcome!
