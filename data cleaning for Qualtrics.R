@@ -14,6 +14,7 @@
 #I will provide codes for an "unrefined" dataset, that is to say, for a case where the aforementioned features are not exploited. 
 #Note that with a "refined" dataset, you will use really similar codes but just skipping some steps
 #If you have any questions or comments, feel free to email me at: angelajw11@gmail.com
+#Your feedback is always welcome!
 
 #Let's start!
 
