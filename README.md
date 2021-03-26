@@ -1,4 +1,4 @@
-# R Tutorial: Useful R codes for cleaning and filtering data from Qualtrics surveys, and for creating new variables in the dataframe
+# R Code-Tutorial to clean and filter data from Qualtrics surveys, and to create new variables in the dataframe
 
 By Ángela Jiang-Wang
 
@@ -20,6 +20,6 @@ I will provide codes with step-by-step explanations for cleaning an "unrefined" 
 Note that with a "refined" dataset, you will use really similar codes but just skipping some steps.
 
 
-If you have any questions or comments, feel free to email me at: angelajw11@gmail.com
+If you have any questions or comments, feel free to email me at: angelajw11@gmail.com, or reach out to me in my Twitter @angyjiwa
 
 Your feedback is always welcome!
