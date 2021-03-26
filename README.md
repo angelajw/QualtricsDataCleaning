@@ -20,6 +20,6 @@ I will provide codes with step-by-step explanations for cleaning an "unrefined" 
 Note that with a "refined" dataset, you will use really similar codes but just skipping some steps.
 
 
-If you have any questions or comments, feel free to email me at: angelajw11@gmail.com, or reach out to me in my Twitter @angyjiwa
+If you have any questions or comments, feel free to email me at: angelajw11@gmail.com, or reach out to me in Twitter: @angyjiwa
 
 Your feedback is always welcome!
