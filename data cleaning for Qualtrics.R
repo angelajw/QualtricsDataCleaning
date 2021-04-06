@@ -93,6 +93,10 @@ d2[,c(7:10)] <- lapply(d2[,c(7:10)], function(x)
                  recode(x,"Not at all likely\n1" = 1, "2" = 2,
                         "3" = 3, "4" = 4, "5" = 5, "6" = 6,
                         "Very likely\n7" = 7))        
+                       
+#to find the number of a column through its name, you may use this code
+which( colnames(d2)=="likely1" ) #write the name of the variable and it will return the column number
+
 
 d2[,c(11:14)] <- lapply(d2[,c(11:14)], function(x) 
                  recode(x,"Not at all annoyed\n1" = 1, "2" = 2,
