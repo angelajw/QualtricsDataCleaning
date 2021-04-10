@@ -110,11 +110,14 @@ d2[,c(16:24)] <- lapply(d2[,c(16:24)], function(x)
                         "6" = 6, "Very reasonable7" = 7))
                  
 d2[,c(25:33, 35)] <- lapply(d2[,c(25:33, 35)], function(x) 
-                 recode(x,"Not at all comfortable\n1" = 1,
+                 recode(x,"Not  at all comfortable\n1" = 1,
                         "2" = 2, "3" = 3, "4" = 4, "5" = 5,
                         "6" = 6, "Very comfortable\n7" = 7))
 
 sapply(d2, class) #examine whether variables are numeric or character
+#If you notice anything going wrong during this step, always double check that the original text is written correctly. Sometimes, just an extra space changes everything!
+#For example, "Not  at all comfortable\n1" has an extra space between "Not" and "at". It is always these tiny things that create errors!
+#If you are unsure, remember to use table(d2$comfortable1) both before and after recoding values                      
 
 #convert variables from character to numeric. 
 #Note that if you directly use the function as.numeric without using as.character first, numbers can become messed up
