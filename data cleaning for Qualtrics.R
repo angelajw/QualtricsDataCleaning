@@ -2,7 +2,7 @@
 #With step by step explanations
 #By Angela Jiang-Wang
 #R version used: 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
-#Latest update to the code: April 10th, 2021
+#Latest update: April 10th, 2021
 
 #Hi all, many Qualtrics surveys used for experiments produce really similar output datasets
 #I will share with you some of my preferred codes and their respective explanations for data cleaning and filtering, and also for creating new variables in the dataframe from existing data with functions and logical operators.
