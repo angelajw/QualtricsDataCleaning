@@ -179,7 +179,7 @@ d3=within(d3,
 #use the argument na.rm=T to omit NAs
 #Note that it is the same as writing
 
-d3$likelyy = (d3$likely1+d3$likely2+d3$likely3+d3$likely4)/4 
+d3$likelyy = (d3$likely1 + d3$likely2 + d3$likely3 + d3$likely4)/4 
 #naming this likelyy to differentiate it from the previously created likely variable
 #This latest code may be more intuitive, but the previous code is faster! (you can also create many new variables at once)
 #you can easily check that the variables likely and likelyy are identical
@@ -194,7 +194,7 @@ d3=within(d3,
                                     annoyed3, annoyed4), na.rm = T)})
 
 #similarly, you can do the same thing by writing this
-d3$likelysumm = d3$likely1+d3$likely2+d3$likely3+d3$likely4
+d3$likelysumm = d3$likely1 + d3$likely2 + d3$likely3 + d3$likely4
 
 #likelysum and likelysumm are identical variables
              
