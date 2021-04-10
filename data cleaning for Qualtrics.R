@@ -167,16 +167,36 @@ d3<- d3[which(d3$ac == "Somewhat flexible"), ]
 
 #Create variables which are the averages of other variables
 
+#In this case, we are creating new variables called "likely" and "annoyed"
+
 d3=within(d3,
           { likely = rowMeans( cbind(likely1,likely2,
-                    d3$likely3, likely4), na.rm = T)
+                    likely3, likely4), na.rm = T)
           annoyed = rowMeans( cbind(annoyed1, annoyed2,
           annoyed3, annoyed4), na.rm = T)})
 
 #use the argument na.rm=T to omit NAs
+#Note that it is the same as writing
+
+d3$likelyy = (d3$likely1+d3$likely2+d3$likely3+d3$likely4)/4 
+#naming this likelyy to differentiate it from the previously created likely variable
+#This latest code may be more intuitive, but the previous code is faster! (you can also create many new variables at once)
+#you can easily check that the variables likely and likelyy are identical
 
 #Create variables by summing them
+#Now we call our new variables "likelysum" and "annoyedsum"
 
+d3=within(d3,
+          { likelysum = rowSums( cbind(likely1,likely2,
+                                     likely3, likely4), na.rm = T)
+          annoyedsum = rowSums( cbind(annoyed1, annoyed2,
+                                    annoyed3, annoyed4), na.rm = T)})
+
+#similarly, you can do the same thing by writing this
+d3$likelysumm = d3$likely1+d3$likely2+d3$likely3+d3$likely4
+
+#likelysum and likelysumm are identical variables
+             
 #In this survey, participants would either see the question "freediscount" or "paydiscount", but never both at once (different treatments)
 #So whenever participants answer the question "freediscount", there is a missing variable in "paydiscount", and viceversa
 #Let's merge the variables freediscount and paydiscount into a single one
