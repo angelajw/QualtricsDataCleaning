@@ -205,7 +205,7 @@ d3$likelysumm = d3$likely1 + d3$likely2 + d3$likely3 + d3$likely4
 d3[is.na(d3)] <- 0 #we convert all missing values into 0
 
 d3$discount <- d3$freediscount + d3$paydiscount #we create this new variable named "discount", which is the sum of the other two
-#you can also use the function rowSums() for this, similarly to the function rowMeans() used before
+#you can also use the function rowSums() for this
 
 #Note: the approach above only works because in this survey, blank responses were not allowed
 #if that is not the case and there may be "real" missing values in your data, another solution should be found, or "real" NAs should be taken care of before this step
@@ -237,7 +237,7 @@ d3=within(d3,
 
 #SAVE THE NEW DATASET
 
-#If you haven't set a WD yet, now it is the time to do it!
+#If you haven't set a Working Directory yet, now it is the time to do it!
 
 write.csv(d3, "clean data.csv")
 
