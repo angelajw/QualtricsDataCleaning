@@ -14,7 +14,7 @@
 #Try playing with features such as Question names, Recode values, Question export tags (for questions with many items such as matrices) in order to produce a more "refined" dataset from Qualtrics.
 #I will provide codes for an "unrefined" dataset, that is to say, for a case where the aforementioned features are not exploited. 
 #Note that with a "refined" dataset, you will use really similar codes but just skipping some steps
-#If you have any questions or comments, feel free to email me at: angelajw11@gmail.com, or reach out to me in Twitter: @angyjiwa
+#If you have any questions or comments, feel free to reach out to me in Twitter: @angyjiwa
 #Your feedback is always welcome!
 
 #Let's start!
