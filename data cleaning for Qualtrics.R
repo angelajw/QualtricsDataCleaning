@@ -156,7 +156,10 @@ d2 <- transform(
 
 #we will continue with d2 
 
-any(is.na(d2)) #to check if there are missing variables (in this case we have NAs)
+any(is.na(d2)) #to check if there are missing values (in this case we have NAs)
+
+colSums(is.na(d2)) #to check which variables contain missing values and how many of them
+
 
 #Optionally, use d2<-na.omit(d2) if you want to remove NAs from the dataframe.
 #It is not useful to use it in this specific dataset due to its structure (all observations have at least 1 NA, so all observations would be removed)
