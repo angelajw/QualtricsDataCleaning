@@ -2,7 +2,7 @@
 #With step by step explanations
 #By Angela Jiang-Wang
 #R version used: 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
-#Latest update: April 10th, 2021
+#Latest update: December 29th, 2021
 
 #Hi all, many Qualtrics surveys used for experiments produce really similar output datasets
 #I will share with you some of my preferred codes and their respective explanations for data cleaning and filtering, and also for creating new variables in the dataframe from existing data with functions and logical operators.
@@ -89,12 +89,12 @@ d2$control <- recode(d2$control, "No control at all\n1" = 1,
 
 #and you can use this code to recode many columns at once
 #d2[,c(7:10)] means you are applying the changes to columns 7 to 10 from d2
-                 
+               
 d2[,c(7:10)] <- lapply(d2[,c(7:10)], function(x) 
                  recode(x,"Not at all likely\n1" = 1, "2" = 2,
                         "3" = 3, "4" = 4, "5" = 5, "6" = 6,
-                        "Very likely\n7" = 7))        
-                       
+                        "Very likely\n7" = 7))     
+
 #to find the number of a column through its name, you may use this code
 which( colnames(d2)=="likely1" ) #write the name of the variable and it will return the column number
 
@@ -118,7 +118,7 @@ d2[,c(25:33, 35)] <- lapply(d2[,c(25:33, 35)], function(x)
 sapply(d2, class) #examine whether variables are numeric or character
 #If you notice anything going wrong during this step, always double check that the original text is written correctly. Sometimes, just an extra space changes everything!
 #For example, "Not  at all comfortable\n1" has an extra space between "Not" and "at". It is always these tiny things that create errors!
-#If you are unsure, remember to use table(d2$comfortable1) both before and after recoding values                      
+#If you are unsure, remember to use table(d2$comfortable1) both before and after recoding values  
 
 #convert variables from character to numeric. 
 #Note that if you directly use the function as.numeric without using as.character first, numbers can become messed up
@@ -142,6 +142,17 @@ d4=cbind(d3,d2) #merge the 2 datasets into a new d4
 d5 <- lapply(d2, function(x) as.numeric(as.character(x)))
 d5=data.frame(d5) #be careful: all variables that had text now are treated as NAs (e.g., consent1, gender)
 #Only do this if all your variables have numbers, or you don't care about the other variables
+
+#this is yet another different way of transforming many variables at once
+#(however I don't find this approach much more efficient than going one by one)
+
+d2 <- transform(
+  d2,
+  freediscount=as.numeric(as.character(freediscount)),
+  paydiscount=as.numeric(as.character(paydiscount)),
+  age = as.numeric(as.character(age))
+)
+
 
 #we will continue with d2 
 
@@ -167,7 +178,6 @@ d3<- d3[which(d3$ac == "Somewhat flexible"), ]
 #CREATING NEW VARIABLES
 
 #Create variables which are the averages of other variables
-
 #In this case, we are creating new variables called "likely" and "annoyed"
 
 d3=within(d3,
@@ -197,7 +207,7 @@ d3=within(d3,
 d3$likelysumm = d3$likely1 + d3$likely2 + d3$likely3 + d3$likely4
 
 #likelysum and likelysumm are identical variables
-             
+
 #In this survey, participants would either see the question "freediscount" or "paydiscount", but never both at once (different treatments)
 #So whenever participants answer the question "freediscount", there is a missing variable in "paydiscount", and viceversa
 #Let's merge the variables freediscount and paydiscount into a single one
@@ -217,7 +227,7 @@ d3$discount <- d3$freediscount + d3$paydiscount #we create this new variable nam
 #If gender = female, then the new variable will have a 1. Otherwise it will be 0
 
 d3$female = NULL
-d3$female [d3$gender == "Female" ] = 1
+d3$female [d3$gender == "Female"] = 1
 d3$female [d3$gender != "Female" ] = 0
 
 #Alternatively, you may also use a function to do this
@@ -235,9 +245,20 @@ d3=within(d3,
 
 #here we are setting that if "discount" = 0, discount2 should be treated as NA, otherwise it should be the sum of freediscount and paydiscount
 
+#OTHER USEFUL FUNCTIONS
+
+#clear workspace
+
+rm(list = ls())
+
+#get % females
+
+nrow(d3[which(d3$gender == "Female"),])/nrow(d1)*100
+
+
 #SAVE THE NEW DATASET
 
-#If you haven't set a Working Directory yet, now it is the time to do it!
+#If you haven't set a WD yet, now it is the time to do it!
 
 write.csv(d3, "clean data.csv")
 
