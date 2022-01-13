@@ -256,7 +256,7 @@ rm(list = ls())
 
 #get % females
 
-nrow(d3[which(d3$gender == "Female"),])/nrow(d1)*100
+nrow(d3[which(d3$gender == "Female"),])/nrow(d3)*100
 
 
 #SAVE THE NEW DATASET
