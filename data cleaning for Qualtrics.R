@@ -85,42 +85,14 @@ colSums(is.na(d2)) #to check which variables contain missing values and how many
 
 # Create an example df - na_df to show examples
 x<-rep(c(NA,2,5,10,15),times=4) # Assign values to x column for na_df
-y<-rep(c(NA,rnorm(1),rnorm(1),rnorm(1)),times=5) # Assign values to y vector for na_df
+y<-rep(c(NA,rnorm(1),rnorm(1),rnorm(1)),times=5) # Assign values to y column for na_df
 na_df <- data.frame(x,y) # Combine to na_df for example
 
 head(na_df,20) # view the output
 
 colSums(is.na(na_df)) # Get total NA values per column
 cbind(colSums(is.na(na_df))) # In a long format for readability (helpful in this format if there are a lot of columns)
-data.frame(result = colSums(is.na(na_df))) %>% # Get na values per col name with NA count in descending order (helpful when there a lot of columns)
-       arrange(desc(result))
-
-# Convert column names to lower to avoid mismatching on case sensitivity
-names(d2)  <- tolower(names(d2))
-
-# Verify desired column name changes
-d2 %>% select(contains(c('consent','discount','fake','likely','annoyed','contol','reason','comfortable','ac','gender','age','condition')))
-
-# Retain only desired columns
-d2 <- d2 %>% select(contains(c('consent','discount','fake','likely','annoyed','contol','reason','comfortable','ac','gender','age','condition')))
-
-# Check for NA's
-any(is.na(d2)) #to check if there are missing values (in this case we have NAs)
-
-colSums(is.na(d2)) #to check which variables contain missing values and how many of them
-
-# If we had missing values - and wanted to do further exporation, we could;
-
-# Create an example df - na_df to show examples
-x<-rep(c(NA,2,5,10,15),times=4) # Assign values to x column for na_df
-y<-rep(c(NA,rnorm(1),rnorm(1),rnorm(1)),times=5) # Assign values to y vector for na_df
-na_df <- data.frame(x,y) # Combine to na_df for example
-
-head(na_df,20) # view the output
-
-colSums(is.na(na_df)) # Get total NA values per column
-cbind(colSums(is.na(na_df))) # In a long format for readability (helpful in this format if there are a lot of columns)
-data.frame(result = colSums(is.na(na_df))) %>% # Get na values per col name with NA count in descending order (helpful when there a lot of columns)
+data.frame(result = colSums(is.na(na_df))) %>% # Get na values per col name with NA count in descending order (helpful when there are a lot of columns)
        arrange(desc(result))
 
 #Now we delete the first two rows. Normally you always do this step with Qualtrics datasets
