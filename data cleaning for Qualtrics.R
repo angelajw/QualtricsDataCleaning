@@ -54,7 +54,7 @@ table(d1$gender) #just write the name of the variable you want to check after d1
 #Remember to examine the dataframe every few steps to see how you're advancing, with head() or View()
 #use commas to select single variables, and use : to express "from x to y" (but then you cannot rename them)
 
-d2<-select(d1, consent1 = Q17, consent2 = Q20, consent3 = Q21,
+d2  <- d1 %>% rename(consent1 = Q17, consent2 = Q20, consent3 = Q21,
            freediscount = Q16, paydiscount = Q22, fakeemail = Q18,
            likely1 = Q3_1, likely2 = Q3_2, likely3 = Q3_3, likely4 = Q3_4,
            annoyed1 = Q24_1, annoyed2 = Q24_2, annoyed3 = Q24_3,
@@ -65,7 +65,35 @@ d2<-select(d1, consent1 = Q17, consent2 = Q20, consent3 = Q21,
            comfortable2 = Q7_2, comfortable3 = Q7_3, comfortable4 = Q7_4,
            comfortable5 = Q7_5, comfortable6 = Q7_6, comfortable7 = Q7_7,
            comfortable8 = Q7_8, comfortable9 = Q7_9, ac = Q19,
-           comfortable10 = Q8, gender, age, comments = Q24, Condition)
+           comfortable10 = Q8, comments = Q24)
+
+# Convert column names to lower to avoid mismatching on case sensitivity
+names(d2)  <- tolower(names(d2))
+
+# Verify desired column name changes
+d2 %>% select(contains(c('consent','discount','fake','likely','annoyed','contol','reason','comfortable','ac','gender','age','condition')))
+
+# Retain only desired columns
+d2 <- d2 %>% select(contains(c('consent','discount','fake','likely','annoyed','contol','reason','comfortable','ac','gender','age','condition')))
+
+# Check for NA's
+any(is.na(d2)) #to check if there are missing values (in this case we have NAs)
+
+colSums(is.na(d2)) #to check which variables contain missing values and how many of them
+
+# If we had missing values - and wanted to do further exporation, we could;
+
+# Create an example df - na_df to show examples
+x<-rep(c(NA,2,5,10,15),times=4) # Assign values to x column for na_df
+y<-rep(c(NA,rnorm(1),rnorm(1),rnorm(1)),times=5) # Assign values to y column for na_df
+na_df <- data.frame(x,y) # Combine to na_df for example
+
+head(na_df,20) # view the output
+
+colSums(is.na(na_df)) # Get total NA values per column
+cbind(colSums(is.na(na_df))) # In a long format for readability (helpful in this format if there are a lot of columns)
+data.frame(result = colSums(is.na(na_df))) %>% # Get na values per col name with NA count in descending order (helpful when there are a lot of columns)
+       arrange(desc(result))
 
 #Now we delete the first two rows. Normally you always do this step with Qualtrics datasets
 #A useful thing to know is that within d2[ , ], the part before the comma corresponds to rows, and the part after the comma corresponds to columns.
@@ -155,14 +183,6 @@ d2 <- transform(
 
 
 #we will continue with d2 
-
-any(is.na(d2)) #to check if there are missing values (in this case we have NAs)
-
-colSums(is.na(d2)) #to check which variables contain missing values and how many of them
-
-
-#Optionally, use d2<-na.omit(d2) if you want to remove NAs from the dataframe.
-#It is not useful to use it in this specific dataset due to its structure (all observations have at least 1 NA, so all observations would be removed)
 
 #FILTER 
 
